@@ -1,0 +1,46 @@
+{
+  "name": "spider-spray-calculator",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "preview": "vite preview",
+    "build": "vite build",
+    "typecheck": "tsc",
+    "format:prettier": "prettier --ignore-path .gitignore --write \"./src/**/*.+(ts|tsx|css)\"",
+    "format:stylelint": "stylelint --ignore-path .gitignore \"**/*.+(css)\" --fix",
+    "format:eslint": "eslint . --ext ts,tsx --fix",
+    "format": "npm-run-all --parallel format:eslint format:stylelint format:prettier",
+    "stage": "npm-run-all typecheck format build"
+  },
+  "dependencies": {
+    "classnames": "^2.5.1",
+    "formik": "^2.4.6",
+    "react": "~19.1.0",
+    "react-dom": "~19.1.0",
+    "react-router-dom": "~7.6.1"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.25.0",
+    "@types/node": "^22.15.29",
+    "@types/react": "^19.1.2",
+    "@types/react-dom": "^19.1.2",
+    "@vitejs/plugin-react": "^4.4.1",
+    "eslint": "^9.25.0",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint-plugin-react-refresh": "^0.4.19",
+    "eslint-plugin-simple-import-sort": "^12.1.1",
+    "globals": "^16.0.0",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^3.5.3",
+    "stylelint": "^16.20.0",
+    "stylelint-config-idiomatic-order": "^10.0.0",
+    "stylelint-config-standard": "^38.0.0",
+    "stylelint-order": "^7.0.0",
+    "typescript": "~5.8.3",
+    "typescript-eslint": "^8.30.1",
+    "vite": "^6.3.5",
+    "vite-plugin-svgr": "^4.3.0"
+  }
+}

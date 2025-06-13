@@ -1,0 +1,51 @@
+.component {
+  position: fixed;
+  z-index: var(--content-block);
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px;
+  border-top: 2px solid var(--color-black);
+  margin-top: auto;
+  background-color: var(--color-white);
+}
+
+.list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.listItem {
+  position: relative;
+  margin-right: 25px;
+}
+
+.listItem:last-of-type {
+  margin-right: 0;
+}
+
+.icon {
+  display: block;
+  width: 40px;
+  height: 40px;
+  transition: scale var(--medium-delay) ease;
+}
+
+.link_active .icon {
+  fill: var(--color-red);
+}
+
+@media (any-hover: hover) {
+  .link:hover .icon {
+    scale: 1.5;
+  }
+}
+
+.text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: transparent;
+  font-size: 0;
+}

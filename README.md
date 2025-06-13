@@ -1,0 +1,1 @@
+[Ссылка на дизайн](https://www.figma.com/community/file/1358180178353418071/finance-management-mobile-app-ui-ux-kit-for-budget-tracker-financial-prototype-design)

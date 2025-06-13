@@ -1,0 +1,14 @@
+.title {
+  margin-bottom: 25px;
+}
+
+.list {
+  padding-left: 15px;
+  list-style: disc;
+}
+
+.listItem {
+  margin-bottom: 10px;
+  font-size: 16px;
+  line-height: 1.5;
+}

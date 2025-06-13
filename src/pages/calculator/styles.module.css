@@ -1,0 +1,19 @@
+.title {
+  margin-bottom: 25px;
+}
+
+.grid {
+  display: flex;
+}
+
+.gridItem {
+  flex: 0 1 50%;
+}
+
+.gridItem_left {
+  margin-right: 40px;
+}
+
+.gridItem_right {
+  margin-left: 40px;
+}
