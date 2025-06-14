@@ -17,10 +17,6 @@ export enum Weight {
   Third = '2',
   Fourth = '3',
   Fifth = '5',
-  Sixth = '6',
-  Seventh = '7',
-  Eighth = '8',
-  Ninth = '9',
   Tenth = '10',
 }
 
@@ -42,12 +38,12 @@ export enum PackingAmount {
   Trip = 50,
 }
 
-export const FROM_UNKNOWN_VALUE = 'UNKNOWN';
+export const DEFAULT_FORM_UNKNOWN_VALUE = 'UNKNOWN';
 export const DEFAULT_FORM_VALUES: FormValues = {
-  type: FROM_UNKNOWN_VALUE,
-  weight: FROM_UNKNOWN_VALUE,
-  content: FROM_UNKNOWN_VALUE,
-  packing: FROM_UNKNOWN_VALUE,
+  type: DEFAULT_FORM_UNKNOWN_VALUE,
+  weight: DEFAULT_FORM_UNKNOWN_VALUE,
+  content: DEFAULT_FORM_UNKNOWN_VALUE,
+  packing: DEFAULT_FORM_UNKNOWN_VALUE,
   workingDays: '',
   packedBoxes: '',
   isPledge: false,

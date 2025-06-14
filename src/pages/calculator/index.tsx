@@ -4,7 +4,7 @@ import classNames from 'classnames';
 
 import { Form } from './components/Form';
 import { Result } from './components/Result';
-import { calculateResult } from './helpers/calculate-week-sum';
+import { calculateResult } from './helpers/calculate-result';
 import { formValidator } from './helpers/form-validator';
 import { DEFAULT_FORM_VALUES } from './constants';
 import type { FormValues, Result as TResult } from './types';

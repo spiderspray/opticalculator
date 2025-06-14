@@ -5,7 +5,7 @@ import {
   DEFAULT_RESULT_PLEDGE,
 } from '../../constants';
 import type { Result as TResult } from '../../types';
-import { DEFAULT_RESULT_VALUE, NUMBER_OF_WEEKS_PER_MONTH } from './constants';
+import { DEFAULT_RESULT_VALUE } from './constants';
 import { getMonthBonus, getWeekBonus } from './helpers';
 
 import styles from './styles.module.css';
@@ -39,9 +39,7 @@ export const Result: FC<Props> = ({ result }) => {
         </li>
         <li className={styles.listItem}>
           Заработаешь за месяц:{' '}
-          {result?.weekAmount
-            ? result.weekAmount * NUMBER_OF_WEEKS_PER_MONTH
-            : DEFAULT_RESULT_VALUE}
+          {result?.monthAmount ? result.monthAmount : DEFAULT_RESULT_VALUE}
         </li>
         <li className={styles.listItem}>{weekBonus}</li>
         <li className={styles.listItem}>{monthBonus}</li>
@@ -52,8 +50,12 @@ export const Result: FC<Props> = ({ result }) => {
             : DEFAULT_RESULT_VALUE}
         </li>
         <li className={styles.listItem}>
-          Ваш залог будет удвоен и составит:{' '}
+          Ваш залог <strong>БУДЕТ УДВОЕН</strong> и составит:{' '}
           {isRenderPledge ? result!.pledge * 2 : DEFAULT_RESULT_VALUE}
+        </li>
+        <li className={styles.listItem}>
+          Финальная сумма за месяц с учётом премии:{' '}
+          {result?.finalMonthSum ? result.finalMonthSum : DEFAULT_RESULT_VALUE}
         </li>
       </ul>
     </div>

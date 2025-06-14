@@ -1,16 +1,16 @@
 import type {
   Content,
-  FROM_UNKNOWN_VALUE,
+  DEFAULT_FORM_UNKNOWN_VALUE,
   PackingName,
   TypeName,
   Weight,
 } from '../constants';
 
 export type FormValues = {
-  type: TypeName | typeof FROM_UNKNOWN_VALUE;
-  weight: Weight | typeof FROM_UNKNOWN_VALUE;
-  content: Content | typeof FROM_UNKNOWN_VALUE;
-  packing: PackingName | typeof FROM_UNKNOWN_VALUE;
+  type: TypeName | typeof DEFAULT_FORM_UNKNOWN_VALUE;
+  weight: Weight | typeof DEFAULT_FORM_UNKNOWN_VALUE;
+  content: Content | typeof DEFAULT_FORM_UNKNOWN_VALUE;
+  packing: PackingName | typeof DEFAULT_FORM_UNKNOWN_VALUE;
   workingDays: string;
   packedBoxes: string;
   isPledge: false;
@@ -31,6 +31,8 @@ export type Result = {
   costOfOneTreasureAmount: number;
   sumOfTreasures: number;
   weekAmount: number;
+  monthAmount: number;
   pledge: number;
   costOfTransportation: number;
+  finalMonthSum: number;
 };

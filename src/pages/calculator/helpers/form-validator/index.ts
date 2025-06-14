@@ -1,6 +1,6 @@
 import type { FormikErrors } from 'formik';
 
-import { FORM_IDS, FROM_UNKNOWN_VALUE } from '../../constants';
+import { DEFAULT_FORM_UNKNOWN_VALUE, FORM_IDS } from '../../constants';
 import type { FormValues, InputValues, SelectValues } from '../../types';
 
 class FormValidator {
@@ -48,7 +48,7 @@ class FormValidator {
   private getSelectErrorMessage(value: SelectValues): string {
     let result = '';
 
-    if (value === FROM_UNKNOWN_VALUE) {
+    if (value === DEFAULT_FORM_UNKNOWN_VALUE) {
       result = 'Значение должно быть выбрано';
     }
 

@@ -14,7 +14,7 @@ export const HomePage = () => {
 
   return (
     <Fragment>
-      {shouldRedirect && <Navigate to={PagePath.Welcome} />}
+      {shouldRedirect && <Navigate to={PagePath.Calculator} />}
 
       <div className={styles.component}>
         <main className={styles.container}>

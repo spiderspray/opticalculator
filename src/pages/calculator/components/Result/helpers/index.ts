@@ -1,9 +1,9 @@
+import { NUMBER_OF_WEEKS_PER_MONTH } from '../../../helpers/calculate-result/constants';
 import type { Result } from '../../../types';
 import {
   DEFAULT_RESULT_VALUE,
   MONTH_NAME,
   NUMBER_OF_TREASURES_TO_RECEIVE_A_BONUS,
-  NUMBER_OF_WEEKS_PER_MONTH,
   WEEK_NAME,
 } from '../constants';
 

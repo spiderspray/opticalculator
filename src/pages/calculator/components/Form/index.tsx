@@ -5,8 +5,8 @@ import type { Formik } from '@/src/types/libs/formik';
 
 import {
   Content,
+  DEFAULT_FORM_UNKNOWN_VALUE,
   FORM_IDS,
-  FROM_UNKNOWN_VALUE,
   PackingAmount,
   PackingName,
   TypeAmount,
@@ -63,7 +63,7 @@ export const Form: FC<Props> = ({ formik }) => {
             className={styles.select}
             {...formik.getFieldProps(FORM_IDS.type)}
           >
-            <option disabled value={FROM_UNKNOWN_VALUE}>
+            <option disabled value={DEFAULT_FORM_UNKNOWN_VALUE}>
               Не выбрано
             </option>
             <option value={TypeName.Magnet}>
@@ -72,7 +72,7 @@ export const Form: FC<Props> = ({ formik }) => {
             <option value={TypeName.Stone}>
               Камень/бутафория (+{TypeAmount.Stone})
             </option>
-            <option value={TypeName.Pit}>Прикоп ({TypeAmount.Pit})</option>
+            <option value={TypeName.Pit}>Прикоп</option>
           </select>
           {isTypeError && (
             <span className={styles.error}>{formik.errors.type}</span>
@@ -87,7 +87,7 @@ export const Form: FC<Props> = ({ formik }) => {
             className={styles.select}
             {...formik.getFieldProps(FORM_IDS.content)}
           >
-            <option disabled value={FROM_UNKNOWN_VALUE}>
+            <option disabled value={DEFAULT_FORM_UNKNOWN_VALUE}>
               Не выбрано
             </option>
             <option value={Content.Hashish}>Шишки/Гашиш</option>
@@ -108,7 +108,7 @@ export const Form: FC<Props> = ({ formik }) => {
             className={styles.select}
             {...formik.getFieldProps(FORM_IDS.weight)}
           >
-            <option disabled value={FROM_UNKNOWN_VALUE}>
+            <option disabled value={DEFAULT_FORM_UNKNOWN_VALUE}>
               Не выбрано
             </option>
             {!isMushrooms && (
@@ -119,11 +119,6 @@ export const Form: FC<Props> = ({ formik }) => {
             <option value={Weight.Fourth}>{Weight.Fourth}</option>
             {!isCocaine && (
               <Fragment>
-                <option value={Weight.Fifth}>{Weight.Fifth}</option>
-                <option value={Weight.Sixth}>{Weight.Sixth}</option>
-                <option value={Weight.Seventh}>{Weight.Seventh}</option>
-                <option value={Weight.Eighth}>{Weight.Eighth}</option>
-                <option value={Weight.Ninth}>{Weight.Ninth}</option>
                 <option value={Weight.Tenth}>{Weight.Tenth}</option>
               </Fragment>
             )}
@@ -141,11 +136,11 @@ export const Form: FC<Props> = ({ formik }) => {
             className={styles.select}
             {...formik.getFieldProps(FORM_IDS.packing)}
           >
-            <option disabled value={FROM_UNKNOWN_VALUE}>
+            <option disabled value={DEFAULT_FORM_UNKNOWN_VALUE}>
               Не выбрано
             </option>
             <option value={PackingName.Independent}>
-              Самостоятельная по прайсу ({PackingAmount.Independent})
+              Самостоятельная по прайсу
             </option>
             <option value={PackingName.Trip}>
               Командировка (+{PackingAmount.Trip})
