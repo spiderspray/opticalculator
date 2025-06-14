@@ -58,6 +58,14 @@ export const Result: FC<Props> = ({ result }) => {
           {result?.finalMonthSum ? result.finalMonthSum : DEFAULT_RESULT_VALUE}
         </li>
       </ul>
+      <div>
+        <span className={styles.also}>
+          Также мы оплатим расходы на подъём МК:
+        </span>
+        <span className={styles.also}>
+          в черте города - 500, за чертой - от 1000
+        </span>
+      </div>
     </div>
   );
 };

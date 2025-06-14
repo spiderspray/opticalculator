@@ -211,7 +211,7 @@ export const Form: FC<Props> = ({ formik }) => {
         type='submit'
         disabled={buttonSubmitFormDisabled}
       >
-        Сравнить
+        Посчитать!
       </button>
     </form>
   );

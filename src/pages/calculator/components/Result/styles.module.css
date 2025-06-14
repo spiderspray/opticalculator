@@ -4,6 +4,7 @@
 
 .list {
   padding-left: 15px;
+  margin-bottom: 15px;
   list-style: disc;
 }
 
@@ -11,4 +12,9 @@
   margin-bottom: 10px;
   font-size: 16px;
   line-height: 1.5;
+}
+
+.also {
+  display: block;
+  color: var(--color-gray);
 }
