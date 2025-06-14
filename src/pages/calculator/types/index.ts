@@ -35,4 +35,6 @@ export type Result = {
   pledge: number;
   costOfTransportation: number;
   finalMonthSum: number;
+  weekBonus: number;
+  monthBonus: number;
 };

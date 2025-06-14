@@ -62,3 +62,6 @@ export const FORM_IDS: FormIds = {
 
 export const DEFAULT_RESULT_PLEDGE = 0;
 export const DEFAULT_RESULT_COST_OF_TRANSPORTATION = 0;
+export const DEFAULT_RESULT_WEEK_BONUS = 0;
+
+export const NUMBER_OF_TREASURES_TO_RECEIVE_A_BONUS = 80;

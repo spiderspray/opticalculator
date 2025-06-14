@@ -117,6 +117,7 @@ export const Form: FC<Props> = ({ formik }) => {
             <option value={Weight.Second}>{Weight.Second}</option>
             <option value={Weight.Third}>{Weight.Third}</option>
             <option value={Weight.Fourth}>{Weight.Fourth}</option>
+            <option value={Weight.Fourth}>{Weight.Fifth}</option>
             {!isCocaine && (
               <Fragment>
                 <option value={Weight.Tenth}>{Weight.Tenth}</option>

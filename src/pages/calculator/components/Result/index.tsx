@@ -6,7 +6,7 @@ import {
 } from '../../constants';
 import type { Result as TResult } from '../../types';
 import { DEFAULT_RESULT_VALUE } from './constants';
-import { getMonthBonus, getWeekBonus } from './helpers';
+import { getMonthBonusText, getWeekBonusText } from './helpers';
 
 import styles from './styles.module.css';
 
@@ -15,8 +15,8 @@ type Props = {
 };
 
 export const Result: FC<Props> = ({ result }) => {
-  const weekBonus = getWeekBonus(result?.sumOfTreasures);
-  const monthBonus = getMonthBonus(result?.sumOfTreasures);
+  const weekBonus = getWeekBonusText(result);
+  const monthBonus = getMonthBonusText(result);
 
   const isRenderPledge = Boolean(
     result?.pledge && result.pledge !== DEFAULT_RESULT_PLEDGE

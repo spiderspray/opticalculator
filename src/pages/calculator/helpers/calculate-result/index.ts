@@ -3,6 +3,8 @@ import {
   DEFAULT_FORM_UNKNOWN_VALUE,
   DEFAULT_RESULT_COST_OF_TRANSPORTATION,
   DEFAULT_RESULT_PLEDGE,
+  DEFAULT_RESULT_WEEK_BONUS,
+  NUMBER_OF_TREASURES_TO_RECEIVE_A_BONUS,
   PackingAmount,
   PackingName,
   TypeAmount,
@@ -143,6 +145,13 @@ class CalculateResult {
     }
   }
 
+  private getWeekBonus = (sumOfTreasures: Result['sumOfTreasures']) => {
+    const isBonus = sumOfTreasures >= NUMBER_OF_TREASURES_TO_RECEIVE_A_BONUS;
+    const result = isBonus ? sumOfTreasures * 100 : DEFAULT_RESULT_WEEK_BONUS;
+
+    return result;
+  };
+
   public calculate = (values: FormValues): Result => {
     const contentAmount = this.getContentAmount(values);
     const typeAmount = this.getTypeAmount(values.type);
@@ -157,6 +166,8 @@ class CalculateResult {
     const weekAmount =
       costOfOneTreasureAmount * compatiblePackedBoxes * compatibleWorkingDays;
     const monthAmount = weekAmount * NUMBER_OF_WEEKS_PER_MONTH;
+    const weekBonus = this.getWeekBonus(sumOfTreasures);
+    const monthBonus = weekBonus * NUMBER_OF_WEEKS_PER_MONTH;
     const pledge = values.isPledge
       ? Number(values.pledge)
       : DEFAULT_RESULT_PLEDGE;
@@ -164,12 +175,14 @@ class CalculateResult {
       packingAmount === PackingAmount.Trip
         ? compatibleWeight * compatiblePackedBoxes * compatibleWorkingDays * 100
         : DEFAULT_RESULT_COST_OF_TRANSPORTATION;
-    const finalMonthSum = monthAmount + costOfTransportation + pledge;
+    const finalMonthSum = monthAmount + monthBonus + costOfTransportation;
 
     return {
       costOfOneTreasureAmount,
       weekAmount,
       monthAmount,
+      weekBonus,
+      monthBonus,
       pledge,
       sumOfTreasures,
       costOfTransportation,
